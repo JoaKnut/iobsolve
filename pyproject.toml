@@ -42,6 +42,7 @@ dev = ["pytest>=7.4.0", "matplotlib>=3.7.0", "httpx>=0.24.0", "uvicorn>=0.23.0",
 [project.urls]
 "Homepage" = "https://github.com/JoaKnut/iobsolve"
 "Bug Tracker" = "https://github.com/JoaKnut/iobsolve/issues"
+"Paper/DOI" = "https://doi.org/10.5281/zenodo.20016070"
 
 [tool.setuptools.packages.find]
 include = ["iobsolve", "iobsolve.*"]
