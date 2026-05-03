@@ -1,0 +1,251 @@
+2026-05-03 00:20:12,606 - INFO - === SERVIDOR IOB ONLINE ===
+2026-05-03 00:20:12,728 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:12,793 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:12,858 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:13,124 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:13,190 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:13,258 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:13,528 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:13,593 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:13,657 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:13,923 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:13,988 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:14,053 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:14,319 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:14,384 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:14,449 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:14,717 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:14,779 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:14,843 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:15,109 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:15,174 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:15,240 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:15,506 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:15,571 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:15,636 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:15,902 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:15,967 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:16,032 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:16,299 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:16,363 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:16,428 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:16,695 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:16,760 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:16,825 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:17,091 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:17,156 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:17,221 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:17,488 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:17,553 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:17,607 - WARNING - 🚀 INICIANDO ATAQUE SIGILOSO DESDE IP: 192.168.1.99
+2026-05-03 00:20:17,624 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:17,900 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:17,975 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:18,050 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:18,175 - WARNING - [IOB] ⚠️ ALERTA DE SISTEMA (Psi_c=5.65). Variedad en compresión severa.
+2026-05-03 00:20:18,228 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:18,229 - INFO - [IMPACTO] 🗡️ Latencia: 608.6ms | Status: 200
+2026-05-03 00:20:18,316 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:18,380 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:18,445 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:18,721 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:18,796 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:18,870 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:19,135 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:19,136 - INFO - [IMPACTO] 🗡️ Latencia: 605.8ms | Status: 200
+2026-05-03 00:20:19,148 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:19,177 - WARNING - [IOB] ⚠️ ALERTA DE SISTEMA (Psi_c=9.06). Variedad en compresión severa.
+2026-05-03 00:20:19,177 - ERROR - [CIRUGÍA] Aislando IP asimétrica: 192.168.1.99 | Latencia IP: 601.5ms
+2026-05-03 00:20:19,213 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:19,278 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:19,440 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:19,441 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 3 contenido por IOB.
+2026-05-03 00:20:19,544 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:19,609 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:19,675 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:19,678 - WARNING - [IOB] ⚠️ ALERTA DE SISTEMA (Psi_c=6.16). Variedad en compresión severa.
+2026-05-03 00:20:19,745 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:19,746 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 4 contenido por IOB.
+2026-05-03 00:20:19,941 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:20,005 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:20,050 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:20,050 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 5 contenido por IOB.
+2026-05-03 00:20:20,071 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:20,179 - WARNING - [IOB] ⚠️ ALERTA DE SISTEMA (Psi_c=7.52). Variedad en compresión severa.
+2026-05-03 00:20:20,336 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:20,355 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:20,356 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 6 contenido por IOB.
+2026-05-03 00:20:20,401 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:20,467 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:20,660 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:20,661 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 7 contenido por IOB.
+2026-05-03 00:20:20,733 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:20,797 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:20,861 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:20,965 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:20,966 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 8 contenido por IOB.
+2026-05-03 00:20:21,127 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:21,191 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:21,256 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:21,270 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:21,271 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 9 contenido por IOB.
+2026-05-03 00:20:21,522 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:21,574 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:21,575 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 10 contenido por IOB.
+2026-05-03 00:20:21,587 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:21,652 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:21,880 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:21,881 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 11 contenido por IOB.
+2026-05-03 00:20:21,919 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:21,984 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:22,049 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:22,184 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:22,185 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 12 contenido por IOB.
+2026-05-03 00:20:22,315 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:22,380 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:22,444 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:22,490 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:22,491 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 13 contenido por IOB.
+2026-05-03 00:20:22,711 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:22,777 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:22,796 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:22,797 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 14 contenido por IOB.
+2026-05-03 00:20:22,842 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:23,101 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:23,102 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 15 contenido por IOB.
+2026-05-03 00:20:23,109 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:23,174 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:23,239 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:23,406 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:23,407 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 16 contenido por IOB.
+2026-05-03 00:20:23,504 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:23,569 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:23,633 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:23,711 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:23,712 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 17 contenido por IOB.
+2026-05-03 00:20:23,899 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:23,964 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:24,015 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:24,016 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 18 contenido por IOB.
+2026-05-03 00:20:24,029 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:24,295 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:24,320 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:24,321 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 19 contenido por IOB.
+2026-05-03 00:20:24,360 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:24,424 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:24,628 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:24,629 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 20 contenido por IOB.
+2026-05-03 00:20:24,692 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:24,757 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:24,821 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:24,933 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:24,934 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 21 contenido por IOB.
+2026-05-03 00:20:25,087 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:25,152 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:25,218 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:25,238 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:25,239 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 22 contenido por IOB.
+2026-05-03 00:20:25,485 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:25,544 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:25,545 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 23 contenido por IOB.
+2026-05-03 00:20:25,549 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:25,614 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:25,848 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:25,849 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 24 contenido por IOB.
+2026-05-03 00:20:25,880 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:25,944 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:26,009 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:26,152 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:26,154 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 25 contenido por IOB.
+2026-05-03 00:20:26,275 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:26,340 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:26,405 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:26,457 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:26,458 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 26 contenido por IOB.
+2026-05-03 00:20:26,670 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:26,735 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:26,762 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:26,763 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 27 contenido por IOB.
+2026-05-03 00:20:26,800 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:27,067 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:27,068 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:27,069 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 28 contenido por IOB.
+2026-05-03 00:20:27,133 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:27,199 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:27,373 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:27,375 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 29 contenido por IOB.
+2026-05-03 00:20:27,464 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:27,529 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:27,593 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:27,679 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:27,680 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 30 contenido por IOB.
+2026-05-03 00:20:27,859 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:27,924 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:27,984 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:27,985 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 31 contenido por IOB.
+2026-05-03 00:20:27,988 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:28,254 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:28,289 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:28,290 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 32 contenido por IOB.
+2026-05-03 00:20:28,318 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:28,383 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:28,593 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:28,594 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 33 contenido por IOB.
+2026-05-03 00:20:28,650 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:28,715 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:28,779 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:28,898 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:28,899 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 34 contenido por IOB.
+2026-05-03 00:20:29,046 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:29,111 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:29,175 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:29,203 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:29,204 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 35 contenido por IOB.
+2026-05-03 00:20:29,442 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:29,508 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:29,511 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:29,512 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 36 contenido por IOB.
+2026-05-03 00:20:29,574 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:29,816 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:29,817 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 37 contenido por IOB.
+2026-05-03 00:20:29,842 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:29,906 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:29,971 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:30,121 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:30,121 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 38 contenido por IOB.
+2026-05-03 00:20:30,237 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:30,302 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:30,366 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:30,425 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:30,426 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 39 contenido por IOB.
+2026-05-03 00:20:30,633 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:30,698 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:30,731 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:30,732 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 40 contenido por IOB.
+2026-05-03 00:20:30,763 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:31,029 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:31,035 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:31,036 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 41 contenido por IOB.
+2026-05-03 00:20:31,094 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:31,160 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:31,340 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:31,341 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 42 contenido por IOB.
+2026-05-03 00:20:31,426 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:31,490 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:31,555 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:31,645 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:31,646 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 43 contenido por IOB.
+2026-05-03 00:20:31,821 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:31,886 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:31,949 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:31,950 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 44 contenido por IOB.
+2026-05-03 00:20:31,951 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:32,204 - WARNING - [IOB] ⚠️ ALERTA DE SISTEMA (Psi_c=12.24). Variedad en compresión severa.
+2026-05-03 00:20:32,218 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:32,254 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:32,255 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 45 contenido por IOB.
+2026-05-03 00:20:32,284 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:32,349 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 200 OK"
+2026-05-03 00:20:32,559 - INFO - HTTP Request: GET http://127.0.0.1:8000/api/data "HTTP/1.1 429 Too Many Requests"
+2026-05-03 00:20:32,560 - INFO - [DEFENSA] ✅ Bloqueado: Ataque 46 contenido por IOB.
+2026-05-03 00:20:32,607 - INFO - === SIMULACIÓN FINALIZADA ===

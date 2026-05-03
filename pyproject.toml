@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "iobsolve"
+version = "0.1.0"
+description = "Topological Integrity Operator Framework para análisis predictivo y control de sistemas complejos."
+readme = "README.md"
+authors = [
+  { name = "Joaquín", email = "tu.email@ejemplo.com" }
+]
+license = { text = "MIT" }
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Scientific/Engineering :: Physics",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+]
+keywords = ["topology", "numerical-analysis", "chaos-theory", "ddos-protection", "quantitative-finance"]
+dependencies = [
+    "numpy>=1.24.0",
+    "scipy>=1.10.0"
+]
+requires-python = ">=3.10"
+
+[project.optional-dependencies]
+# Dependencias específicas por módulo para no sobrecargar instalaciones ligeras
+network = ["fastapi>=0.100.0", "uvicorn>=0.23.0"]
+finance = [] # Por ahora usa solo numpy, pero podrías añadir pandas o yfinance en el futuro
+all = ["fastapi>=0.100.0", "uvicorn>=0.23.0", "matplotlib>=3.7.0", "httpx>=0.24.0"]
+dev = ["pytest>=7.4.0", "matplotlib>=3.7.0", "httpx>=0.24.0", "uvicorn>=0.23.0", "fastapi>=0.100.0"]
+
+[project.urls]
+"Homepage" = "https://github.com/JoaKnut/iobsolve"
+"Bug Tracker" = "https://github.com/JoaKnut/iobsolve/issues"
+
+[tool.setuptools.packages.find]
+include = ["iobsolve", "iobsolve.*"]
