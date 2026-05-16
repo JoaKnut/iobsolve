@@ -58,6 +58,7 @@ class ModeCollapseDetector:
         asegurando un overhead de diagnóstico estrictamente sub-milisegundo durante 
         las iteraciones de entrenamiento (backward pass).
         """
+        # 1. Calculamos el estrés (diferencia entre vecinos)
         stress = self.operator.compute_stress(
             state_tensor=activation_vector,
             topology=self.topology,
@@ -65,7 +66,11 @@ class ModeCollapseDetector:
             normalize_output=True
         )
         
-        collapsed_nodes = stress[stress > self.collapse_threshold]
+        # 2. Invertimos el campo: Cohesión = 1.0 - Estrés
+        cohesion = 1.0 - stress
+        
+        # 3. Filtramos los nodos que superan la tolerancia de cohesión (ej: > 0.85)
+        collapsed_nodes = cohesion[cohesion > self.collapse_threshold]
         
         # .numel() extrae la cantidad de elementos tensoriales de forma segura
         collapse_ratio = float(collapsed_nodes.numel()) / self.topology.measure

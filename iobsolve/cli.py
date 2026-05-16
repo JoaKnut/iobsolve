@@ -1,5 +1,5 @@
 r"""
-Interfaz de Línea de Comandos (CLI) para IOB-Solve v0.3.0.
+Interfaz de Línea de Comandos (CLI) para IOB-Solve v0.2.0.
 
 Este módulo expone los motores topológicos continuos y discretos del framework.
 Permite ejecutar diagnósticos espaciales, instrumentar ciberdefensa asíncrona,
@@ -64,7 +64,7 @@ def log(msg: str) -> None:
 
 def print_header(title: str) -> None:
     """Imprime el encabezado estandarizado para los comandos del CLI."""
-    log(f"\n{'='*60}\n[*] IOB-Solve v0.3.0 | {title}\n{'='*60}")
+    log(f"\n{'='*60}\n[*] IOB-Solve v0.2.0 | {title}\n{'='*60}")
 
 
 def parse_l_metric(value: str) -> Union[str, float]:
@@ -374,7 +374,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(
         prog="iobsolve",
         description=(
-            "IOB-Solve v0.3.0 — Framework Analítico de Integridad Topológica\n"
+            "IOB-Solve v0.2.0 — Framework Analítico de Integridad Topológica\n"
             "\n"
             "Localiza singularidades en campos vectoriales continuos y detecta\n"
             "anomalías topológicas en grafos discretos mediante el Operador de\n"
