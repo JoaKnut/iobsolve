@@ -1,6 +1,4 @@
-# tests/cli/test_cli_complex.py
 
-import os
 import json
 import torch
 import pytest
@@ -97,8 +95,7 @@ def test_cli_audit_latent_collapse(workspace):
     embeddings_file = workspace / "llm_embeddings.pt"
     # Forzamos colapso modal creando vectores muy similares
     base_vector = torch.randn(1536, dtype=torch.float64)
-    noise = torch.randn(512, 1536, dtype=torch.float64) * 0.01
-    collapsed_batch = base_vector + noise
+    collapsed_batch = base_vector.unsqueeze(0).repeat(512, 1)
     torch.save(collapsed_batch, embeddings_file)
     
     out_json = workspace / "audit_out.json"

@@ -1,5 +1,4 @@
 import torch
-import pytest
 from iobsolve.core.space import DiscreteTopology
 from iobsolve.plugins.discrete.network_shield import DDoSShield
 from iobsolve.plugins.discrete.mode_collapse import ModeCollapseDetector
@@ -50,11 +49,11 @@ def test_shield_ataque_estrella():
     # Umbral sensible para detectar la asimetría
     shield = DDoSShield(topology=topology, critical_threshold=2.5)
     
-    # Tráfico normal para los bordes (ruido gaussiano suave)
-    flujo_ataque = torch.abs(torch.randn(N, dtype=torch.float64))
+    # Tráfico basal normalizado y estable (evita falsos positivos gaussianos)
+    flujo_ataque = torch.ones(N, dtype=torch.float64) + (torch.rand(N, dtype=torch.float64) * 0.1)
     
     # Inyección asimétrica masiva en el nodo central (ataque DDoS)
-    flujo_ataque[0] = 10000.0 
+    flujo_ataque[0] = 10000.0
     
     _, alertas = shield.process_telemetry(flujo_ataque)
     

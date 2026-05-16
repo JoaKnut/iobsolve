@@ -1,6 +1,5 @@
 import math
 import torch
-import pytest
 from iobsolve.continuous.flow_theorem import FlowTheoremLocator
 
 EPSILON = 1e-2
