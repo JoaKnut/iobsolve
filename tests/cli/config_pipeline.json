@@ -1,0 +1,8 @@
+{
+    "batch": 256,
+    "dim": 512,
+    "tau": 0.90,
+    "format": "json",
+    "out_file": "audit_pipeline_report.json",
+    "plot": "distribucion_pipeline.png"
+}
