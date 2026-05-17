@@ -3,19 +3,33 @@ message: "Si utiliza este framework en su investigación, por favor cítelo de l
 authors:
   - family-names: Knuttzen
     given-names: Joaquín
-title: "iobsolve: v0.2.0 - Topological Integrity Operator Framework"
+title: "iobsolve: v0.2.0 — Framework de Integridad Topológica para Aislamiento de Singularidades y Cirugía de Anomalías en Redes"
 version: 0.2.0
 doi: 10.5281/zenodo.20016070
-date-released: 2026-05-04
+date-released: 2026-05-16
 url: "https://github.com/JoaKnut/iobsolve"
+repository-code: "https://github.com/JoaKnut/iobsolve"
+license: MIT
+abstract: >
+  IOB-Solve implementa el Operador de Integridad de Bisagra (IOB), un motor matemático
+  que cuantifica el estrés topológico en variedades euclidianas continuas y topologías
+  de red discretas. El framework provee: aislamiento de raíces en campos vectoriales
+  mediante el IOB-QuadTree (TVI + IOB-FFT), cuantificación de estrés nodal mediante el
+  Laplaciano-Beltrami discreto (D-IOB), estimación robusta de anomalías vía Z-Score MAD
+  con factor de olvido exponencial, y cirugía topológica algorítmica en O(k_i) sobre
+  matrices Sparse COO. Opera nativamente sobre tensores PyTorch diferenciables con
+  soporte para Autograd y aceleración GPU (CUDA/MPS).
 keywords:
   - topología
   - análisis numérico
+  - geometría diferencial
   - teoría del caos
   - sistemas complejos
   - ciberseguridad
   - grafos
+  - laplaciano espectral
   - aprendizaje profundo
   - detección de anomalías
   - finanzas cuantitativas
-license: MIT
+  - pytorch
+  - autograd

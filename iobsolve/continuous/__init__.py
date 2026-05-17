@@ -1,16 +1,30 @@
 r"""
-Dominio Continuo del Framework IOB-Solve (Continuous).
+Submódulo del Dominio Continuo (Paper I).
 
-Este submódulo instrumenta la axiomatización geométrica para variedades euclidianas 
-diferenciables. Incluye el Operador de Bisagra (IOB) primigenio para aislar 
-singularidades topológicas y el Teorema del Flujo de Integridad, el cual acopla 
-el mapeo espectral con particiones espaciales para evadir el cálculo del Jacobiano 
-en sistemas dinámicos.
+Expone el :class:`~iobsolve.continuous.hinge.ContinuousIntegrityOperator`
+y el :class:`~iobsolve.continuous.flow_theorem.FlowTheoremLocator` como
+la API pública del motor continuo del framework IOB-Solve.
+
+El motor continuo opera sobre variedades euclidianas diferenciables
+:math:`\Omega \subset \mathbb{R}^n`, cuantificando el estrés geométrico local
+mediante el Laplaciano continuo y localizando singularidades mediante la
+bisección recursiva del espacio de fases (IOB-QuadTree) combinada con el
+análisis espectral de alta frecuencia (IOB-FFT).
+
+Exports
+-------
+ContinuousIntegrityOperator
+    Operador de Bisagra para el dominio continuo. Evalúa
+    :math:`\mathcal{H}(x) = |\nabla^2 \phi(x)|`.
+FlowTheoremLocator
+    Localizador de raíces y singularidades basado en el Teorema del Flujo
+    de Integridad (TVI + IOB-FFT + IOB-QuadTree).
 
 References
 ----------
-.. [1] Knuttzen, J. (2026). "Formalismo de Integridad de Bisagra: Aislamiento 
-       Topológico de Singularidades y Control de Bifurcaciones en Variedades Continuas".
+.. [1] Knuttzen, J. (2026). "Formalismo de Integridad de Bisagra: Aislamiento
+       Topológico de Singularidades y Control de Bifurcaciones en Variedades
+       Continuas".
 """
 
 from .hinge import ContinuousIntegrityOperator

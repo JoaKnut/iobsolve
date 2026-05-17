@@ -1,140 +1,316 @@
-# IOB-Solve: Topological Integrity Operator Framework
+<div align="center">
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20016070.svg)](https://doi.org/10.5281/zenodo.20016070)
-[![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/downloads/)
-[![PyTorch 2.0+](https://img.shields.io/badge/PyTorch-2.0%2B-ee4c2c)](https://pytorch.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# IOB-Solve
 
-**IOB-Solve** (v0.2.0) es un framework de análisis numérico de alto rendimiento basado en el **Operador de Integridad de Bisagra (IOB)**. Está diseñado para detectar, aislar y controlar rupturas en la topología de sistemas continuos y grafos discretos *antes* de que ocurran colapsos sistémicos o degeneraciones espaciales.
+**Framework de Integridad Topológica para Aislamiento de Singularidades y Cirugía de Anomalías en Redes**
 
-Desarrollado por **Joaquín V. Knuttzen**, el framework elude los cálculos Jacobianos prohibitivos $\mathcal{O}(N^3)$ reemplazándolos con Laplacianos Geométricos instantáneos, particiones recursivas (QuadTree) y mapeo espectral de alta frecuencia (FFT). Esto otorga una **Latencia Positiva** (alerta predictiva temprana) frente a singularidades inminentes.
+[![Versión](https://img.shields.io/badge/versión-0.2.0-blue.svg)](https://github.com/JoaKnut/iobsolve)
+[![Python](https://img.shields.io/badge/python-%3E%3D3.10-blue.svg)](https://www.python.org/)
+[![Licencia: MIT](https://img.shields.io/badge/licencia-MIT-green.svg)](LICENSE)
+[![PyTorch](https://img.shields.io/badge/backend-PyTorch-EE4C2C.svg)](https://pytorch.org/)
 
----
-
-## 🔬 Arquitectura Core e Implementaciones
-
-El ecosistema se divide en dos motores principales apoyados por papers de investigación.
-
-### 1. Dominio Continuo (Teorema del Flujo de Integridad)
-Instrumenta la axiomatización geométrica para variedades euclidianas diferenciables. Aísla raíces y singularidades sin recurrir a la linealización iterativa.
-* **IOB-QuadTree + TVI:** Ejecuta una bisección recursiva del espacio de fases $\Omega \subset \mathbb{R}^n$. Aplica el Teorema del Valor Intermedio como filtro topológico $\mathcal{O}(N)$ para descartar subdominios sin cambio de signo antes de un costoso análisis tensorial.
-* **IOB-FFT:** Confirma singularidades interiores midiendo el estrés armónico de alta frecuencia $\mathcal{Q}_{spec}$ sobre mallas discretizadas locales.
-
-### 2. Dominio Discreto (Laplacianos de Flujo)
-Traslada la medición de curvatura a grafos, redes y espacios hiper-dimensionales latentes.
-* **Network Shield (DDoS):** Calcula el estrés topológico sobre matrices ralas (sparse). Un nodo con flujo asimétrico masivo deforma el equilibrio baricéntrico del grafo, permitiendo aislarlo (Cirugía Topológica) en tiempo sub-milisegundo $\mathcal{O}(k_i)$.
-* **Auditoría IA (Mode Collapse):** Mide la métrica dual de *Estrés/Cohesión*. Si los tensores de activación de un modelo degeneran hacia un atractor puntual (colapso modal), la varianza se reduce a cero. El IOB lo detecta evaluando el Laplaciano Combinatorio del lote de inferencia.
+</div>
 
 ---
 
-## 🚀 Instalación
+## Descripción General
 
-IOB-Solve está optimizado para entornos de hardware tensorial (CUDA/MPS). 
+**IOB-Solve** es un framework Python que implementa el *Operador de Integridad de Bisagra* (IOB) — un motor matemático que cuantifica el estrés topológico en variedades continuas y topologías de red discretas. Opera nativamente sobre tensores PyTorch diferenciables, con soporte para funciones de pérdida compatibles con Autograd y aceleración por hardware (CUDA / MPS).
 
-    git clone https://github.com/JoaKnut/iobsolve.git
-    cd iobsolve
-    pip install -e .[vis,test]
+El motor está fundamentado en dos artículos teóricos complementarios:
 
----
+- **Paper I** — *Formalismo de Integridad de Bisagra: Aislamiento Topológico de Singularidades y Control de Bifurcaciones en Variedades Continuas* (Knuttzen, 2026)
+- **Paper II** — *Formalismo de Integridad de Bisagra Discreto: Laplacianos de Grafos, Detección de Anomalías Asíncronas y Colapsos en Redes Complejas* (Knuttzen, 2026)
 
-## 💻 Interfaz de Línea de Comandos (CLI)
+### Capacidades Principales
 
-El módulo interactivo expone 6 sub-comandos principales (`roots`, `spectral`, `dynamics`, `shield`, `audit`, `check`). 
-
-### Opciones Globales de I/O
-Todos los comandos aceptan las siguientes banderas globales para manipular las salidas:
-* `--format`: Formato de serialización de salida. Opciones: `text` (default), `json`.
-* `--out-file PATH`: Ruta física para exportar la telemetría (ej: `reporte.json`).
-* `-q`, `--quiet`: Suprime encabezados y logs de consola. Ideal para pipelines CI/CD automatizados.
-* `--plot PATH`: Genera una renderización gráfica (PNG) del diagnóstico en la ruta especificada.
-* `--config PATH`: Archivo JSON que sobrescribe dinámicamente los flags del CLI.
-
-### 1. Comando `roots`: Localización de Singularidades
-Localiza raíces de campos vectoriales vía IOB-QuadTree + TVI + FFT.
-
-* **Parámetros:**
-  * `--expr EXPR`: Expresión matemática directa (ej: `'sin(x)-y, cos(y)-x'`).
-  * `--manifold FILE:CLASE`: Inyecta un sistema complejo desde un archivo Python externo.
-  * `--radius FLOAT`: Radio inicial del dominio de búsqueda (default: `5.0`).
-  * `--depth INT`: Profundidad máxima de bisección recursiva (default: `8`).
-  * `--res INT`: Resolución de muestreo local para la FFT (default: `16`, max: `32`).
-  * `--tau-spec FLOAT`: Umbral de estrés espectral $\tau_c$ (default: `1e-3`).
-  * `--no-sign-filter`: Desactiva el filtro TVI para buscar singularidades no-raíz.
-* **Ejemplo Complejo:**
-    
-        iobsolve roots --manifold "mi_sistema.py:Lorenz" --radius 10.0 --depth 12 --tau-spec 1e-4 --plot atractores.png --format json --out-file raices.json
-
-### 2. Comando `shield`: Cirugía Topológica Anti-DDoS
-Extirpación asíncrona de nodos anómalos en grafos discretos.
-
-* **Parámetros:**
-  * `-i`, `--input PATH`: Topología exportada del usuario en formato `.graphml`.
-  * `--traffic PATH`: Carga de tráfico asíncrono o telemetría en formato `.npy` o `.pt`.
-  * `--nodes INT`: Cardinalidad de la red a simular en ausencia de un archivo de entrada (default: `1000`).
-  * `--tau FLOAT`: Umbral crítico del Z-Score Topológico para ejecutar cirugía (default: `3.0`).
-  * `--l-metric METRIC`: Calibración del ruido basal (`auto` o float).
-  * `--attack`: Flag booleana que inyecta tráfico asimétrico masivo para probar las defensas.
-* **Ejemplo Complejo:**
-
-        iobsolve shield -i red_corporativa.graphml --traffic logs_flujo.pt --tau 2.5 --l-metric auto --plot cirugia.png
-
-### 3. Comando `audit`: Colapso Modal en IA
-Auditoría de isometría latente para modelos de Deep Learning.
-
-* **Parámetros:**
-  * `-i`, `--input PATH`: Tensor de representaciones latentes extraídas de la red neuronal (`.npy`, `.pt`).
-  * `--batch INT`: Tamaño del tensor de mini-batch a simular (default: `128`).
-  * `--dim INT`: Dimensionalidad del hiperespacio latente (default: `256`).
-  * `--tau FLOAT`: Tolerancia máxima al estrés de cohesión topológica (default: `0.85`).
-* **Ejemplo Complejo:**
-
-        iobsolve audit -i embeddings_llama3.pt --dim 4096 --tau 0.90 --format json
-
-### 4. Comando `dynamics`: Sensor Predictivo (Early Warning)
-Monitor dinámico predictivo para trayectorias de alta dimensionalidad.
-
-* **Parámetros:**
-  * `-i`, `--input PATH`: Archivo de trayectorias empíricas (`.npy`, `.pt`).
-  * `--dim INT`: Dimensionalidad del espacio de fases a simular (default: `40`).
-  * `--l-metric METRIC`: Resolución óptica de la varianza topológica (`auto` o float).
-* **Ejemplo Complejo:**
-
-        iobsolve dynamics -i trayectoria_climatologica.npy --dim 128 --l-metric 3.05 --format json
-
-### 5. Comando `spectral`: Mapeo de Densidad Topológica
-Ejecuta la Transformada Rápida de Fourier (IOB-FFT) a nivel global.
-
-* **Parámetros:**
-  * `--grid INT`: Resolución de la malla computacional total (default: `1024`).
-* **Ejemplo:**
-
-        iobsolve spectral --grid 2048 --out-file densidad_espectral.json
-
-### 6. Comando `check`: Diagnóstico del Entorno
-Verifica las versiones, librerías, y la disponibilidad de aceleradores de hardware tensorial (CUDA/MPS) sin ejecutar cálculos.
-
-* **Ejemplo:**
-
-        iobsolve check
+| Dominio | Motor | Aplicación |
+|---------|-------|------------|
+| Continuo | IOB-QuadTree + TVI + FFT | Aislamiento de singularidades y raíces en campos vectoriales |
+| Continuo | IOB-FFT (SpectralIntegrityMapper) | Mapeo de estrés de alta frecuencia sobre variedades |
+| Discreto | D-IOB (Laplaciano-Beltrami) | Cuantificación de estrés nodal en grafos |
+| Discreto | Cirugía Topológica | Extirpación de anomalías en red en tiempo real (DDoS) |
+| IA / ML | ModeCollapseDetector | Auditoría de isometría del espacio latente en modelos profundos |
 
 ---
 
-## 🧪 Pruebas de Software Científico (Reproducibilidad)
+## Fundamentos Matemáticos
 
-IOB-Solve cuenta con un framework de pruebas automatizado que certifica su solidez. Para ejecutar la validación completa:
+### Dominio Continuo (Paper I)
 
-    pytest tests/ -v
+El Operador de Integridad de Bisagra Continuo evalúa el campo de estrés topológico $\mathcal{H}(x)$ como la magnitud de la divergencia del gradiente (Laplaciano):
 
-* **`tests/continuous/`:** Valida que el motor converja exactamente sobre las raíces analíticas de las variedades, solucionando matemáticamente el solapamiento de frontera (*Boundary Overlap*).
-* **`tests/discrete/`:** Audita que el Laplaciano distinga entre isometría, flujos asimétricos hostiles (ataques a redes) y colapso modal en inteligencia artificial.
-* **`tests/benchmarks/`:** Confirma el rendimiento empírico bajo estrés masivo (ej: procesamiento topológico en grafos de 100,000 nodos en fracciones de segundo).
-* **`tests/vis/`:** Validaciones en modo *headless* para la renderización de espectros, aptas para canales de CI/CD.
+$$\mathcal{H}(x) = \left| \nabla^2 \phi(x) \right|$$
+
+calculado mediante diferencias finitas centrales de segundo orden sobre una variedad euclidiana discretizada $\Omega \subset \mathbb{R}^n$.
+
+**Aislamiento de Raíces (IOB-QuadTree):** El `FlowTheoremLocator` bisecta el espacio de fases recursivamente, combinando dos criterios complementarios:
+
+1. **Filtro TVI (Teorema del Valor Intermedio)** — test de cambio de signo en $\mathcal{O}(N)$; descarta subdominios sin raíces antes de la FFT.
+2. **Criterio espectral (IOB-FFT)** — la razón de energía de alta frecuencia $\mathcal{Q}_{\text{spec}} \in [0, 1]$ confirma discontinuidades geométricas:
+
+$$\mathcal{Q}_{\text{spec}} = \frac{\displaystyle\sum_{\nu > \nu_c} \sum_c \left|\mathcal{F}_c(\nu)\right|^2}{\displaystyle\sum_\nu \sum_c \left|\mathcal{F}_c(\nu)\right|^2}$$
+
+Una ventana de Tukey suprime el *spectral leakage* antes de cada FFT local.
+
+### Dominio Discreto (Paper II)
+
+El Operador de Bisagra Discreto proyecta el vector de estado nodal sobre el Laplaciano del grafo $\mathbf{L} = \mathbf{D} - \mathbf{W}$ (combinatorio) o su variante normalizada $\mathcal{L} = \mathbf{I} - \mathbf{D}^{-1/2}\mathbf{W}\mathbf{D}^{-1/2}$ para extraer el *residuo baricéntrico*:
+
+$$\mathbf{R}_i(t) = -(\mathbf{L}\,\mathbf{X})_i$$
+
+El **Z-Score Topológico Robusto** (basado en MAD) normaliza el estrés instantáneo $Q_i$ contra la dispersión poblacional, elevando el punto de ruptura estadístico al 50 %:
+
+$$\mathcal{M}_i(t) = \frac{0.6745 \cdot \left(Q_i(t) - \tilde{Q}^*(t)\right)}{\max\!\left(\text{MAD}(t),\, \varepsilon\right)}$$
+
+donde $\tilde{Q}^*(t)$ es la mediana mezclada exponencialmente (factor de olvido $\lambda$) que previene el *concept drift* en tráfico no estacionario.
 
 ---
 
-## 📜 Publicaciones y Respaldo Teórico
+## Instalación
 
-El fundamento matemático de este framework está detallado en los siguientes documentos de investigación provistos en el directorio `/paper`:
+### Mínima (solo motor central)
+```bash
+pip install iobsolve
+```
 
-1.  **Knuttzen, J. (2026).** *"Formalismo de Integridad de Bisagra: Aislamiento Topológico de Singularidades y Control de Bifurcaciones en Variedades Continuas"*.
-2.  **Knuttzen, J. (2026).** *"Formalismo de Integridad de Bisagra Discreto: Laplacianos de Flujo y Cirugía Topológica en Grafos"*.
+### Con soporte de visualización
+```bash
+pip install "iobsolve[vis]"
+```
+
+### Entorno de desarrollo (tests + linting)
+```bash
+git clone https://github.com/JoaKnut/iobsolve.git
+cd iobsolve
+pip install -e ".[dev,vis]"
+```
+
+**Requisitos:** Python ≥ 3.10, PyTorch ≥ 2.0
+
+---
+
+## Inicio Rápido
+
+### 1. Localizar raíces de un campo vectorial (Continuo)
+
+```python
+import torch
+from iobsolve.continuous.flow_theorem import FlowTheoremLocator
+from iobsolve.plugins.continuous.singularities import TranscendentalManifold
+
+locator = FlowTheoremLocator(
+    system_equation=TranscendentalManifold(),
+    grid_resolution=16,
+    spectral_threshold=1e-3,
+    require_sign_change=True,
+)
+
+dominio = ((-10.0, 10.0), (-2.0, 2.0))  # espacio de fases 2D
+raices = locator.locate_root_centroids(dominio, max_depth=8)
+print(f"Raíces encontradas: {len(raices)} en {raices}")
+```
+
+### 2. Detectar ataques DDoS en una red (Discreto)
+
+```python
+import torch
+from iobsolve.core.space import DiscreteTopology
+from iobsolve.plugins.discrete.network_shield import DDoSShield
+
+N = 1000
+adj = torch.zeros((N, N), dtype=torch.float64)
+adj[0, 1:] = 1.0; adj[1:, 0] = 1.0
+
+topology = DiscreteTopology(adjacency=adj)
+shield   = DDoSShield(topology=topology, critical_threshold=3.0)
+
+trafico = torch.abs(torch.randn(N, dtype=torch.float64))
+trafico[0] = 9999.0   # ataque volumétrico simulado en el hub
+
+topologia_segura, alertas = shield.process_telemetry(trafico)
+print(f"Nodos anómalos: {alertas.nonzero().squeeze().tolist()}")
+```
+
+### 3. Auditar colapso del espacio latente (IA)
+
+```python
+import torch
+from iobsolve.core.space import DiscreteTopology
+from iobsolve.plugins.discrete.mode_collapse import ModeCollapseDetector
+
+B, D = 256, 512
+embeddings = torch.randn(B, D, dtype=torch.float64)
+
+adj = torch.ones((B, B), dtype=torch.float64) - torch.eye(B, dtype=torch.float64)
+topology  = DiscreteTopology(adjacency=adj)
+detector  = ModeCollapseDetector(topology=topology, collapse_threshold=0.85)
+
+colapso_activo = detector.scan_activations(embeddings)
+print("Colapso modal detectado:", colapso_activo)
+```
+
+---
+
+## Interfaz de Línea de Comandos
+
+IOB-Solve incluye una CLI completa accesible mediante el comando `iobsolve`.
+
+```
+iobsolve <comando> [opciones]
+```
+
+### Comandos
+
+| Comando | Descripción |
+|---------|-------------|
+| `roots` | Localiza raíces de campos vectoriales vía IOB-QuadTree + TVI + FFT |
+| `spectral` | Mapeo global de densidad topológica (IOB-FFT) |
+| `dynamics` | Sensor de alerta temprana para bifurcaciones caóticas |
+| `shield` | Cirugía topológica anti-DDoS sobre grafos discretos |
+| `audit` | Auditoría de isometría del espacio latente en arquitecturas de IA |
+| `check` | Verifica el entorno, versión de PyTorch y hardware disponible |
+
+### Ejemplos
+
+```bash
+# Buscar raíces de la variedad trascendental predeterminada en [-10,10]^2
+iobsolve roots --radius 10 --depth 10
+
+# Usar una expresión algebraica personalizada
+iobsolve roots --expr "sin(x) - y, cos(y) - x" --radius 4 --depth 10
+
+# Inyectar un sistema Python externo y exportar resultados
+iobsolve roots --manifold mi_ode.py:MiSistema --radius 6 \
+         --format json --out-file raices.json --plot raices.png
+
+# Simular un ataque DDoS en una red de 500 nodos
+iobsolve shield --nodes 500 --attack --tau 2.5 --plot topologia.png
+
+# Auditar un tensor latente desde un archivo .pt
+iobsolve audit -i embeddings.pt --dim 768 --tau 0.9 --format json
+
+# Verificar el entorno
+iobsolve check
+```
+
+---
+
+## Estructura del Proyecto
+
+```
+iobsolve/
+├── core/                        # Primitivas matemáticas
+│   ├── types.py                 # Alias de tipos (ManifoldField, StressTensor, …)
+│   ├── base_operator.py         # BaseIntegrityOperator abstracto
+│   ├── laplacian.py             # ContinuousLaplacian, DiscreteLaplacian
+│   ├── space.py                 # EuclideanManifold, DiscreteTopology
+│   ├── spectral.py              # SpectralIntegrityMapper (IOB-FFT)
+│   └── partition.py             # SpatialPartitionEngine (IOB-QuadTree)
+├── continuous/                  # Motor del Paper I
+│   ├── hinge.py                 # ContinuousIntegrityOperator
+│   └── flow_theorem.py          # FlowTheoremLocator (aislamiento de raíces)
+├── discrete/                    # Motor del Paper II
+│   ├── hinge.py                 # DiscreteIntegrityOperator (D-IOB)
+│   ├── estimators.py            # RecursiveTopologicalZScore (MAD)
+│   └── surgery.py               # TopologicalSurgeon (poda)
+├── plugins/                     # Aplicaciones específicas de dominio
+│   ├── continuous/
+│   │   ├── dynamics.py          # Sistema caótico de Lorenz-96
+│   │   └── singularities.py     # TranscendentalManifold (referencia)
+│   └── discrete/
+│       ├── network_shield.py    # DDoSShield
+│       └── mode_collapse.py     # ModeCollapseDetector
+├── io/                          # Capa de E/S
+│   ├── parsers.py               # Ingesta de tensores / topologías / configs
+│   ├── exporters.py             # Serialización de telemetría JSON
+│   └── visualizers.py           # Renderizadores Matplotlib / NetworkX
+└── cli.py                       # Punto de entrada argparse
+```
+
+---
+
+## Tests
+
+La suite de pruebas cubre 108 tests en categorías de unidad, integración y benchmarks.
+
+```bash
+# Ejecutar la suite completa
+pytest
+
+# Con informe de cobertura
+pytest --cov=iobsolve --cov-report=term-missing
+
+# Solo un módulo específico
+pytest tests/core/test_laplacian.py -v
+
+# Excluir benchmarks (ejecución rápida en CI)
+pytest -m "not benchmark"
+```
+
+| Directorio | Cobertura |
+|------------|-----------|
+| `tests/core/` | Laplacianos, espacios, QuadTree |
+| `tests/continuous/` | Operador IOB, mapeador espectral, FlowTheoremLocator |
+| `tests/discrete/` | D-IOB, Z-Score, Cirugía, DDoS Shield |
+| `tests/io/` | Parsers (pt/npy/json/graphml), exporters |
+| `tests/cli/` | Tests de CLI extremo a extremo |
+| `tests/vis/` | Smoke tests de renderizado Matplotlib |
+| `tests/benchmarks/` | Aserciones de escalabilidad (O(k), O(N log N)) |
+
+---
+
+## Archivos de Configuración
+
+IOB-Solve acepta archivos de configuración JSON mediante `--config`:
+
+```json
+{
+  "radius": 10.0,
+  "depth": 12,
+  "tau_spec": 5e-4,
+  "format": "json",
+  "out_file": "resultados.json"
+}
+```
+
+```bash
+iobsolve roots --config config.json
+```
+
+---
+
+## Notas de Arquitectura
+
+- **Compatible con Autograd**: todas las operaciones tensoras preservan el grafo de cómputo de PyTorch; los tensores de estrés pueden usarse directamente como funciones de pérdida.
+- **Sparse-first**: el motor discreto usa `torch.sparse_coo_tensor` para evaluación del Laplaciano en $\mathcal{O}(k_i)$, evitando productos matriciales densos en $\mathcal{O}(N^3)$.
+- **Agnóstico al dispositivo**: los cómputos se ejecutan nativamente en CPU, CUDA o MPS — pase `device="cuda"` al `FlowTheoremLocator` para aceleración GPU.
+- **Arquitectura de plugins**: sistemas, variedades y topologías personalizadas pueden inyectarse vía CLI (`--manifold archivo.py:Clase`) o la API Python.
+
+---
+
+## Cita
+
+Si utiliza IOB-Solve en trabajo académico, cite los artículos fundamentales:
+
+```bibtex
+@article{knuttzen2026continuo,
+  author  = {Knuttzen, Joaquín},
+  title   = {Formalismo de Integridad de Bisagra: Aislamiento Topológico de
+             Singularidades y Control de Bifurcaciones en Variedades Continuas},
+  year    = {2026}
+}
+
+@article{knuttzen2026discreto,
+  author  = {Knuttzen, Joaquín},
+  title   = {Formalismo de Integridad de Bisagra Discreto: Laplacianos de Grafos,
+             Detección de Anomalías Asíncronas y Colapsos en Redes Complejas},
+  year    = {2026}
+}
+```
+
+---
+
+## Licencia
+
+MIT — véase [LICENSE](LICENSE) para más detalles.
