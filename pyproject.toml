@@ -1,48 +1,121 @@
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = ["setuptools>=61.0.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "iobsolve"
-version = "0.1.0"
-description = "Topological Integrity Operator Framework para análisis predictivo y control de sistemas complejos."
+version = "0.2.0"
+description = "Mathematical engine for topological integrity, singularity location, and network anomaly surgery."
 readme = "README.md"
 authors = [
-  { name = "Joaquín", email = "tu.email@ejemplo.com" }
+    { name = "Joaquín Knuttzen", email = "joaknuttzen06@gmail.com" }
 ]
 license = { text = "MIT" }
+requires-python = ">=3.10"
+keywords = [
+    "topology",
+    "graph-theory",
+    "differential-geometry",
+    "chaos-theory",
+    "cybersecurity",
+    "pytorch",
+    "autograd",
+    "spectral-analysis",
+    "anomaly-detection",
+]
 classifiers = [
-    "Development Status :: 3 - Alpha",
+    "Development Status :: 4 - Beta",
     "Intended Audience :: Science/Research",
     "Intended Audience :: Developers",
     "Topic :: Scientific/Engineering :: Mathematics",
-    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Security",
     "License :: OSI Approved :: MIT License",
-    "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
-    "Programming Language :: Python :: 3.13",
-    "Programming Language :: Python :: 3.14",
+    "Typing :: Typed",
 ]
-keywords = ["topology", "numerical-analysis", "chaos-theory", "ddos-protection", "quantitative-finance"]
+
 dependencies = [
-    "numpy>=1.24.0",
-    "scipy>=1.10.0"
+    "torch>=2.0.0",
 ]
-requires-python = ">=3.10"
 
 [project.optional-dependencies]
-# Dependencias específicas por módulo para no sobrecargar instalaciones ligeras
-network = ["fastapi>=0.100.0", "uvicorn>=0.23.0"]
-finance = [] # Por ahora usa solo numpy, pero podrías añadir pandas o yfinance en el futuro
-all = ["fastapi>=0.100.0", "uvicorn>=0.23.0", "matplotlib>=3.7.0", "httpx>=0.24.0"]
-dev = ["pytest>=7.4.0", "matplotlib>=3.7.0", "httpx>=0.24.0", "uvicorn>=0.23.0", "fastapi>=0.100.0"]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "mypy>=1.5.0",
+    "pyright>=1.1.300",
+    "ruff>=0.1.0",
+]
+
+vis = [
+    "numpy>=1.24.0",
+    "matplotlib>=3.7.0",
+    "seaborn>=0.12.0",
+    "scikit-learn>=1.3.0",
+    "scipy>=1.10.0",
+    "networkx>=3.0",
+]
+
+all = [
+    "iobsolve[dev,vis]",
+]
 
 [project.urls]
-"Homepage" = "https://github.com/JoaKnut/iobsolve"
+Homepage      = "https://github.com/JoaKnut/iobsolve"
+Repository    = "https://github.com/JoaKnut/iobsolve"
 "Bug Tracker" = "https://github.com/JoaKnut/iobsolve/issues"
-"Paper/DOI" = "https://doi.org/10.5281/zenodo.20016070"
+Documentation = "https://joaknut.github.io/iobsolve"
+
+[project.scripts]
+iobsolve = "iobsolve.cli:main"
 
 [tool.setuptools.packages.find]
-include = ["iobsolve", "iobsolve.*"]
+where   = ["."]
+include = ["iobsolve*"]
+
+[tool.pyright]
+include  = ["iobsolve"]
+exclude  = ["**/__pycache__", "build", "dist"]
+strict   = ["iobsolve/core", "iobsolve/continuous", "iobsolve/discrete"]
+reportMissingTypeStubs = true
+
+[tool.mypy]
+strict                 = true
+ignore_missing_imports = true
+warn_unused_ignores    = true
+warn_redundant_casts   = true
+warn_return_any        = true
+
+[tool.ruff]
+line-length    = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+markers = [
+    "benchmark: marks tests as performance benchmarks (run separately with -m benchmark)",
+]
+testpaths = ["tests"]
+addopts   = "-v --tb=short"
+filterwarnings = [
+    "ignore::UserWarning:torch",
+    "ignore:.*Sparse invariant.*",
+]
+
+[tool.coverage.run]
+source = ["iobsolve"]
+omit   = ["*/__pycache__/*", "*/tests/*"]
+
+[tool.coverage.report]
+show_missing  = true
+skip_covered  = false
+exclude_lines = [
+    "pragma: no cover",
+    "if TYPE_CHECKING:",
+    "@(abc\\.)?abstractmethod",
+]

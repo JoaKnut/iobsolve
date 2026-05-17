@@ -1,60 +1,54 @@
-import numpy as np
-from abc import ABC, abstractmethod
-from typing import Optional
+r"""
+Módulo de Definiciones de Tipos (Type Hints) para IOB-Solve.
 
-class IOBSystem(ABC):
-    """
-    Clase base abstracta para sistemas dinámicos o algebraicos evaluables por el framework IOB.
+Establece las primitivas algebraicas y topológicas utilizando tensores diferenciables.
+El ecosistema emplea PyTorch para soportar diferenciación automática (Autograd)
+y aceleración por hardware (CUDA/MPS), garantizando la estabilidad asintótica de 
+las operaciones descritas en los marcos teóricos I y II.
 
-    Define la interfaz obligatoria para computar el estado y sus derivadas 
-    direccionales (proyecciones Jacobianas) dentro del espacio de fases.
-    """
-    
-    @property
-    @abstractmethod
-    def dimensionality(self) -> int:
-        """
-        Returns
-        -------
-        int
-            La dimensión (N) del espacio de fases.
-        """
-        pass
+References
+----------
+.. [1] Knuttzen, J. (2026). "Formalismo de Integridad de Bisagra: Aislamiento 
+       Topológico de Singularidades y Control de Bifurcaciones en Variedades Continuas".
+.. [2] Knuttzen, J. (2026). "Formalismo de Integridad de Bisagra Discreto: 
+       Laplacianos de Grafos, Detección de Anomalías Asíncronas y Colapsos en Redes Complejas".
+"""
 
-    @abstractmethod
-    def evaluate(self, state: np.ndarray, t: float = 0.0) -> np.ndarray:
-        """
-        Evalúa las ecuaciones de estado del sistema.
+from typing import Callable, TypeAlias
+import torch
 
-        Parameters
-        ----------
-        state : np.ndarray
-            Vector de estado actual del sistema.
-        t : float, optional
-            Variable de tiempo para sistemas no autónomos (default: 0.0).
+# =============================================================================
+# DOMINIO CONTINUO (Paper I: Variedades Euclidianas Diferenciables)
+# =============================================================================
 
-        Returns
-        -------
-        np.ndarray
-            La salida evaluada (e.g., campo de velocidades dX/dt o función f(z)).
-        """
-        pass
-        
-    def evaluate_jacobian(self, state: np.ndarray, direction: np.ndarray) -> Optional[np.ndarray]:
-        """
-        Computa la derivada direccional del sistema.
+#: Representa un campo escalar \phi(x) o vectorial v(x) mapeado sobre la variedad \Omega.
+#: Se asume dtype=torch.float64 para prevenir pérdida de precisión en derivadas de alto orden.
+ManifoldField: TypeAlias = torch.Tensor
 
-        Parameters
-        ----------
-        state : np.ndarray
-            Vector de estado actual.
-        direction : np.ndarray
-            Vector unitario que representa la dirección de la perturbación.
+#: Coordenadas espaciales del hipercubo evaluado (\Omega \subset \mathbb{R}^n).
+SpatialDomain: TypeAlias = tuple[torch.Tensor, ...]
 
-        Returns
-        -------
-        np.ndarray or None
-            La proyección del Jacobiano exacto. Si retorna None, el operador recurre 
-            a diferencias finitas o a la normalización L^4 (modo de caja negra).
-        """
-        return None
+#: Definición de un sistema dinámico como un campo vectorial de flujos: dx/dt = F(x, t).
+DynamicalSystem: TypeAlias = Callable[[float, ManifoldField], ManifoldField]
+
+# =============================================================================
+# DOMINIO DISCRETO (Paper II: Topologías No Euclidianas y Redes Complejas)
+# =============================================================================
+
+#: Matriz de Adyacencia A_{ij}. Puede instanciarse en memoria densa o dispersa 
+#: (torch.sparse_coo / torch.sparse_csr) para garantizar complejidad \mathcal{O}(k_i).
+AdjacencyMatrix: TypeAlias = torch.Tensor
+
+#: Matriz Diagonal de Grados D_{ii} = \sum_j A_{ij}.
+DegreeMatrix: TypeAlias = torch.Tensor
+
+#: Vector de estado \mathbf{x}_i(t) o tensor latente proyectado sobre los vértices del grafo.
+NodalStateVector: TypeAlias = torch.Tensor
+
+# =============================================================================
+# OPERADORES Y MÉTRICAS
+# =============================================================================
+
+#: Tensor de Estrés \mathcal{H} o \mathcal{Q}_i. Cuantifica la divergencia o 
+#: el cizallamiento geométrico evaluado por el motor del IOB.
+StressTensor: TypeAlias = torch.Tensor

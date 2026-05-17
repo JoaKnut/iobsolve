@@ -1,0 +1,119 @@
+site_name: IOB-Solve
+site_description: >-
+  Motor matemático de integridad topológica para aislamiento de singularidades
+  y cirugía de anomalías en redes — impulsado por PyTorch Autograd.
+site_author: Joaquín Knuttzen
+site_url: https://joaknut.github.io/iobsolve
+repo_url: https://github.com/JoaKnut/iobsolve
+repo_name: JoaKnut/iobsolve
+copyright: Copyright &copy; 2026 Joaquín Knuttzen — Licencia MIT
+
+theme:
+  name: material
+  language: es
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: deep-purple
+      toggle:
+        icon: material/brightness-7
+        name: Cambiar a modo oscuro
+    - scheme: slate
+      primary: indigo
+      accent: deep-purple
+      toggle:
+        icon: material/brightness-4
+        name: Cambiar a modo claro
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+    - toc.integrate
+  font:
+    text: Inter
+    code: JetBrains Mono
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search:
+      lang: es
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            docstring_style: numpy
+            show_source: true
+            show_root_heading: true
+            show_root_full_path: false
+            show_if_no_docstring: false
+            members_order: source
+            separate_signature: true
+            show_signature_annotations: true
+            heading_level: 2
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.arithmatex:
+      generic: true
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+nav:
+  - Inicio: index.md
+  - Guías:
+    - Primeros Pasos: guides/getting_started.md
+    - Dominio Continuo: guides/continuous.md
+    - Dominio Discreto: guides/discrete.md
+    - Referencia CLI: guides/cli.md
+    - Configuración: guides/configuration.md
+  - Referencia de API:
+    - Panorama: api/index.md
+    - core:
+      - types: api/core/types.md
+      - base_operator: api/core/base_operator.md
+      - laplacian: api/core/laplacian.md
+      - space: api/core/space.md
+      - spectral: api/core/spectral.md
+      - partition: api/core/partition.md
+    - continuous:
+      - hinge: api/continuous/hinge.md
+      - flow_theorem: api/continuous/flow_theorem.md
+    - discrete:
+      - hinge: api/discrete/hinge.md
+      - estimators: api/discrete/estimators.md
+      - surgery: api/discrete/surgery.md
+    - plugins:
+      - dynamics: api/plugins/dynamics.md
+      - singularities: api/plugins/singularities.md
+      - network_shield: api/plugins/network_shield.md
+      - mode_collapse: api/plugins/mode_collapse.md
+    - io:
+      - parsers: api/io/parsers.md
+      - exporters: api/io/exporters.md
+      - visualizers: api/io/visualizers.md
+  - Fundamentos Matemáticos: reference/math.md
+  - Registro de Cambios: reference/changelog.md
