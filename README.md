@@ -9,6 +9,8 @@
 [![Python](https://img.shields.io/badge/python-%3E%3D3.10-blue.svg)](https://www.python.org/)
 [![Licencia: MIT](https://img.shields.io/badge/licencia-MIT-green.svg)](LICENSE)
 [![PyTorch](https://img.shields.io/badge/backend-PyTorch-EE4C2C.svg)](https://pytorch.org/)
+[![Documentación](https://img.shields.io/badge/docs-GitHub%20Pages-blue.svg)](https://JoaKnut.github.io/iobsolve/)
+
 
 </div>
 
@@ -22,6 +24,8 @@ El motor está fundamentado en dos artículos teóricos complementarios:
 
 - **Paper I** — *Formalismo de Integridad de Bisagra: Aislamiento Topológico de Singularidades y Control de Bifurcaciones en Variedades Continuas* (Knuttzen, 2026)
 - **Paper II** — *Formalismo de Integridad de Bisagra Discreto: Laplacianos de Grafos, Detección de Anomalías Asíncronas y Colapsos en Redes Complejas* (Knuttzen, 2026)
+
+📚 **Documentación completa:** https://JoaKnut.github.io/iobsolve/
 
 ### Capacidades Principales
 
