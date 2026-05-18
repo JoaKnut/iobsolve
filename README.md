@@ -4,7 +4,7 @@
 
 **Framework de Integridad Topológica para Aislamiento de Singularidades y Cirugía de Anomalías en Redes**
 
-[[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20016070.svg)](https://doi.org/10.5281/zenodo.20016070)](https://doi.org/10.5281/zenodo.20262050)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20262050.svg)](https://doi.org/10.5281/zenodo.20262050)
 [![Versión](https://img.shields.io/badge/versión-0.2.0-blue.svg)](https://github.com/JoaKnut/iobsolve)
 [![Python](https://img.shields.io/badge/python-%3E%3D3.10-blue.svg)](https://www.python.org/)
 [![Licencia: MIT](https://img.shields.io/badge/licencia-MIT-green.svg)](LICENSE)
